@@ -1,5 +1,5 @@
 {
-  "name": "vietnamese-slug",
+  "name": "vietnamese-slug-nodejs",
   "version": "1.0.0",
   "description": "A utility for generating slugs and extracting IDs from Vietnamese text.",
   "main": "index.js",
