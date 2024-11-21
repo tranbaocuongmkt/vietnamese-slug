@@ -1,0 +1,25 @@
+{
+  "name": "vietnamese-slug",
+  "version": "1.0.0",
+  "description": "A utility for generating slugs and extracting IDs from Vietnamese text.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tranbaocuongmkt/vietnamese-slug.git"
+  },
+  "keywords": [
+    "\"vietnamese\"",
+    "\"slug\"",
+    "\"seo\"",
+    "\"utils\""
+  ],
+  "author": "Trần Bảo Cường",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tranbaocuongmkt/vietnamese-slug/issues"
+  },
+  "homepage": "https://github.com/tranbaocuongmkt/vietnamese-slug#readme"
+}
