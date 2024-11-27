@@ -1,30 +1,26 @@
-Dưới đây là tài liệu README hoàn chỉnh cho module **Vietnamese Slug**:
-
----
-
 # Vietnamese Slug
 
-**Vietnamese Slug** là một thư viện tiện ích để tạo *slug* chuẩn SEO từ văn bản tiếng Việt và trích xuất ID từ chuỗi *slug*. Thư viện hỗ trợ loại bỏ dấu tiếng Việt và các ký tự không hợp lệ, giúp cải thiện quá trình xử lý URL và SEO.
+**Vietnamese Slug** là một thư viện mạnh mẽ giúp bạn chuyển đổi văn bản tiếng Việt thành slug chuẩn SEO và trích xuất ID từ chuỗi slug một cách dễ dàng. Thư viện hỗ trợ loại bỏ dấu tiếng Việt và các ký tự không hợp lệ, tối ưu hóa URL và cải thiện SEO cho trang web của bạn.
 
-## Features
+## Tính Năng Nổi Bật
 
-- Chuyển đổi chuỗi tiếng Việt thành slug thân thiện với SEO.
-- Hỗ trợ tùy chỉnh ký tự phân cách (`separator`).
-- Tách và trích xuất ID hợp lệ từ chuỗi slug.
+- Chuyển đổi văn bản tiếng Việt thành slug chuẩn SEO.
+- Tùy chỉnh ký tự phân cách (`separator`) theo nhu cầu.
+- Trích xuất ID hợp lệ từ chuỗi slug một cách chính xác.
 
-## Installation
+## Cài Đặt
 
-Cài đặt thư viện qua npm:
+Cài đặt thư viện qua npm để bắt đầu sử dụng ngay:
 
 ```bash
 npm i vietnamese-slug-nodejs
 ```
 
-## Usage
+## Hướng Dẫn Sử Dụng
 
-### Import thư viện
+### Nhập Thư Viện
 
-Sử dụng **ES Module** hoặc **CommonJS**:
+Bạn có thể sử dụng **ES Module** hoặc **CommonJS** tùy theo cấu trúc dự án của mình.
 
 #### ES Module
 ```javascript
@@ -36,30 +32,30 @@ import { slug_generation, get_id } from "vietnamese-slug-nodejs";
 const { slug_generation, get_id } = require("vietnamese-slug-nodejs");
 ```
 
-### Example
+### Ví Dụ Sử Dụng
 
-#### 1. **Tạo slug từ chuỗi**
+#### 1. **Tạo Slug từ Văn Bản**
 
 ```javascript
 const slug = slug_generation("Tiêu đề bài viết tiếng Việt", "-");
 console.log(slug); 
-// Output: "tieu-de-bai-viet-tieng-viet"
+// Kết quả: "tieu-de-bai-viet-tieng-viet"
 ```
 
-Bạn cũng có thể thay đổi ký tự phân cách:
+Bạn cũng có thể tùy chỉnh ký tự phân cách, ví dụ như sử dụng dấu gạch dưới (`_`):
 
 ```javascript
 const customSlug = slug_generation("Cà phê ngon!", "_");
 console.log(customSlug); 
-// Output: "ca_phe_ngon"
+// Kết quả: "ca_phe_ngon"
 ```
 
-#### 2. **Trích xuất ID từ slug**
+#### 2. **Trích Xuất ID từ Slug**
 
 ```javascript
 const id = get_id("tieu-de-bai-viet-123456789");
 console.log(id); 
-// Output: "123456789"
+// Kết quả: "123456789"
 ```
 
 Nếu slug không chứa ID hợp lệ, hàm sẽ trả về `null`:
@@ -67,7 +63,7 @@ Nếu slug không chứa ID hợp lệ, hàm sẽ trả về `null`:
 ```javascript
 const invalidId = get_id("tieu-de-bai-viet");
 console.log(invalidId); 
-// Output: null
+// Kết quả: null
 ```
 
 ---
@@ -76,54 +72,54 @@ console.log(invalidId);
 
 ### `slug_generation(str: string, separator: string = "-"): string`
 
-- **Mô tả:** Chuyển đổi một chuỗi thành slug chuẩn SEO.
-- **Tham số:**
-  - `str` *(string)*: Chuỗi gốc cần chuyển đổi.
-  - `separator` *(string)*: Ký tự phân cách trong slug (mặc định là `"-"`).
-- **Trả về:** Chuỗi slug đã chuẩn hóa.
+- **Mô Tả:** Chuyển đổi chuỗi văn bản thành slug chuẩn SEO.
+- **Tham Số:**
+  - `str` *(string)*: Chuỗi văn bản cần chuyển đổi.
+  - `separator` *(string)*: Ký tự phân cách trong slug (mặc định là dấu gạch ngang `"-"`).
+- **Trả Về:** Chuỗi slug đã chuẩn hóa.
 
-#### **Ví dụ:**
+#### **Ví Dụ:**
 ```javascript
 slug_generation("Chào mừng đến với Việt Nam!", "-");
-// Output: "chao-mung-den-voi-viet-nam"
+// Kết quả: "chao-mung-den-voi-viet-nam"
 ```
 
 ---
 
 ### `get_id(slug: string): string | null`
 
-- **Mô tả:** Trích xuất ID hợp lệ từ cuối slug.
-- **Tham số:**
-  - `slug` *(string)*: Chuỗi slug chứa ID (dạng `"ten-bai-viet-123456"`).
-- **Trả về:** ID *(string)* nếu hợp lệ, hoặc `null` nếu không tìm thấy.
+- **Mô Tả:** Trích xuất ID hợp lệ từ cuối slug.
+- **Tham Số:**
+  - `slug` *(string)*: Chuỗi slug chứa ID (ví dụ `"ten-bai-viet-123456"`).
+- **Trả Về:** ID (string) nếu hợp lệ, hoặc `null` nếu không tìm thấy.
 
-#### **Ví dụ:**
+#### **Ví Dụ:**
 ```javascript
 get_id("tieu-de-12345");
-// Output: "12345"
+// Kết quả: "12345"
 ```
 
 ---
 
-## Contributing
+## Đóng Góp
 
-Nếu bạn muốn đóng góp cho dự án, vui lòng tạo **Pull Request** hoặc **Issue** tại kho lưu trữ GitHub:  
+Chúng tôi rất hoan nghênh sự đóng góp của bạn! Nếu bạn muốn giúp phát triển thư viện, vui lòng tạo **Pull Request** hoặc mở **Issue** tại kho lưu trữ GitHub:  
 [GitHub Repository](https://github.com/tranbaocuongmkt/vietnamese-slug)
 
 ---
 
-## License
+## Giấy Phép
 
-**Vietnamese Slug** được phát hành theo giấy phép [MIT License](LICENSE).
+**Vietnamese Slug** được phát hành dưới giấy phép [MIT License](LICENSE).
 
 ---
 
-## Author
+## Tác Giả
 
 - **Trần Bảo Cường**  
-- [GitHub](https://github.com/tranbaocuongmkt)  
-- [npm Profile](https://www.npmjs.com/~tranbaocuongmkt)
+  Website: [tranbaocuong.com](https://tranbaocuong.com/)  
+  [GitHub](https://github.com/tranbaocuongmkt) | [npm Profile](https://www.npmjs.com/~tranbaocuongmkt)
 
 ---
 
-Bạn có thể sử dụng tài liệu này để hướng dẫn người dùng một cách đầy đủ và chi tiết! 🎉
+Với thư viện này, bạn có thể dễ dàng tạo ra các URL thân thiện với SEO, cải thiện hiệu quả tìm kiếm và quản lý ID trong ứng dụng của mình. Hãy thử ngay! 🎉
